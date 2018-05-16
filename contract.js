@@ -79,9 +79,9 @@ Snake.prototype = {
 
     getRankingListTop3: function(){
         var RankingList = new Array();
-        RankingList[0] = this.snakeMap.get(0);
-        RankingList[1] = this.snakeMap.get(1);
-        RankingList[2] = this.snakeMap.get(2);
+        for(var i = 0; i < this.size; i++){
+            RankingList[i] = this.snakeMap.get(i);
+        }
         return RankingList;
     },
 

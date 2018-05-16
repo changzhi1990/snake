@@ -132,7 +132,7 @@ function snakeCrashHandler() {
 function submitScore(){
    var NebPay = require("nebpay");
    var nebPay = new NebPay();
-   var dappAddress = "n1zHChyu2ni9N9TXrpZZ2zbWzcK3T8rMcNE";
+   var dappAddress = "n1j9fbojzxYATEvfekA8r3y8LRRqkjUWgxM";
    var nebulas = require("nebulas"),
    Account = nebulas.Account,
    neb = new nebulas.Neb();
@@ -152,7 +152,7 @@ function submitScore(){
 $(function(){
 	var NebPay = require("nebpay");
     var nebPay = new NebPay();
-    var dappAddress = "n1zHChyu2ni9N9TXrpZZ2zbWzcK3T8rMcNE";
+    var dappAddress = "n1j9fbojzxYATEvfekA8r3y8LRRqkjUWgxM";
     var nebulas = require("nebulas"),
     Account = nebulas.Account,
     neb = new nebulas.Neb();
@@ -177,16 +177,43 @@ $(function(){
 
 function parseResult(resp){
   var result = JSON.parse(resp.result);
-  result.sort(function(a, b){
-  	return b.score - a.score;
-  })
   console.log(result);
-  var no1score = result[0].score;
-  var no1player = result[0].author.slice(0, 15);
-  var no2score = result[1].score;
-  var no2player = result[1].author.slice(0, 15);
-  var no3score = result[2].score;
-  var no3player = result[2].author.slice(0, 15);
+  var no1score;
+  var no1player;
+  var no2score;
+  var no2player;
+  var no3score;
+  var no3player;
+
+  if(result.length == 3){
+      result.sort(function(a, b){
+      	return b.score - a.score;
+      })
+      console.log(result);
+      var no1score = result[0].score;
+      var no1player = result[0].author.slice(0, 15);
+      var no2score = result[1].score;
+      var no2player = result[1].author.slice(0, 15);
+      var no3score = result[2].score;
+      var no3player = result[2].author.slice(0, 15);
+  }
+
+  if(result.length == 2){
+      result.sort(function(a, b){
+      	return b.score - a.score;
+      })
+      console.log(result);
+      var no1score = result[0].score;
+      var no1player = result[0].author.slice(0, 15);
+      var no2score = result[1].score;
+      var no2player = result[1].author.slice(0, 15);
+  }
+
+  if(result.length == 1){
+      console.log(result);
+      var no1score = result[0].score;
+      var no1player = result[0].author.slice(0, 15);
+  }
 
   $('#no1score').html(no1score);
   $('#no1player').html(no1player);
