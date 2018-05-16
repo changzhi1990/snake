@@ -8,7 +8,7 @@
 	float: left;
 	margin-right: 20px;
 	border: 4px double #1D6609;
-    background:#ebe2ce;
+    background:#d1ceeb;
 		:relative;
 }
 
@@ -20,7 +20,7 @@
     -moz-border-radius:15px;
     -webkit-border-radius:15px;
     border-radius:15px;
-    background:#ebe2ce;
+    background:#d1ceeb;
 	font-family:sans-serif; 
     font-weight:bold; 
 	text-align:center;
@@ -35,7 +35,7 @@
     -moz-border-radius:15px;
     -webkit-border-radius:15px;
     border-radius:15px;
-    background:#ebe2ce;
+    background:#ceceeb;
 	font-family:sans-serif; 
     font-weight:bold; 
 	color:#792c15;
