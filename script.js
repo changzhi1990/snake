@@ -1,4 +1,3 @@
-//***********MAIN.js**********//
 var gameBoard;
 var snake;
 var moveDirection = 'right';
@@ -9,7 +8,6 @@ var roundNum = 1;
 var eatenItemsCount =0;
 var MAX_FOOD_ITEMS = 12;
 
-//actual field size(400px) divided by corresponding bodypart size(8px)
 var gameFieldRelativeWidth = 50;
 var gameFieldRelativeHeight = 50;
 
@@ -239,8 +237,7 @@ function startNextRound() {
 	clearInterval(gameExecutor);
 	gameExecutor = setInterval(move,gameSpeed);
 };
-//***************************//
-//*********SNAKE.js*********//
+
 function BodyPart(xpos,ypos,direction) {
 	this.xPos=xpos;
 	this.yPos=ypos;
@@ -353,8 +350,7 @@ function Snake(startX,startY) {
 		}
 	};
 };
-//**************************//
-//*******GAMEBOARD.js******//
+
 function GameBoard() {
 
 	this.drawElement = function (classname, xpos,ypos) {
@@ -407,4 +403,3 @@ function GameBoard() {
 		$('#speed').html($currentSpeed);
 	};
 }
-//************************//
